@@ -1,6 +1,6 @@
 package motivationcompositionmonad
 
-object DivisionAndSquareOption {
+object DivisionAndSquareOption extends DivisionAndSquare[Option] {
   
     def division( divident : Int, divisor : Int ) : Option[Int] = {
         
@@ -30,8 +30,7 @@ object DivisionAndSquareOption {
     }
   
 
-    def divisionAndSquare( divident : Int, divisor : Int ) : Option[Double] = {
-
+    override def divisionAndSquare( divident : Int, divisor : Int ) : Option[Double] = {
 
        for {
        

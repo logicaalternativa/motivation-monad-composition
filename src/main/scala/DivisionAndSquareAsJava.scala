@@ -32,7 +32,11 @@ object DivisionAndSquareAsJava {
 
     def divisionAndSquare( divident : Int, divisor : Int ) : Double = {
       
-      square( division( divident, divisor ) )
+      val resDivision =  division( divident, divisor )
+      
+      val resSquare = square( resDivision )
+      
+      resSquare
       
     }
   

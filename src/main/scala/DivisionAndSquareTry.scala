@@ -2,7 +2,7 @@ package motivationcompositionmonad
 
 import scala.util.{Try, Success, Failure}
 
-object DivisionAndSquareTry {
+object DivisionAndSquareTry  extends DivisionAndSquare[Try] {
   
     def division( divident : Int, divisor : Int ) : Try[Int] = {
         
@@ -19,16 +19,6 @@ object DivisionAndSquareTry {
     def square( value : Int ) : Try[Double] = {
       
       import scala.math.sqrt
-      //~ 
-      //~ if( value < 0){
-        //~ 
-        //~ Option.empty
-            //~ 
-      //~ }else{
-      //~ 
-        //~ Option( sqrt(value) )
-      //~ 
-      //~ }
       
       if( value < 0){
       
@@ -44,8 +34,7 @@ object DivisionAndSquareTry {
     }
   
 
-    def divisionAndSquare( divident : Int, divisor : Int ) : Try[Double] = {
-
+    override def divisionAndSquare( divident : Int, divisor : Int ) : Try[Double] = {
 
        for {
        

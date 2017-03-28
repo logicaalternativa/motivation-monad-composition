@@ -3,7 +3,7 @@ package motivationcompositionmonad
 import scala.util.{Try, Success, Failure}
 import scala.concurrent.Future 
 
-object DivisionAndSquareFuture {
+object DivisionAndSquareFuture extends DivisionAndSquare[Future] {
   
   import scala.concurrent.ExecutionContext.Implicits.global
   
@@ -51,7 +51,7 @@ object DivisionAndSquareFuture {
     }
   
 
-    def divisionAndSquare( divident : Int, divisor : Int ) : Future[Double] = {
+    override def divisionAndSquare( divident : Int, divisor : Int ) : Future[Double] = {
 
 
        for {

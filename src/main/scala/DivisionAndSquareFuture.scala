@@ -9,7 +9,7 @@ object DivisionAndSquareFuture extends DivisionAndSquare[Future] {
   
   import scala.util.Random.nextInt
   
-    def division( divident : Int, divisor : Int ) : Future[Int] = {
+  def division( divident : Int, divisor : Int ) : Future[Int] = {
         
         divisor match {
         

@@ -13,8 +13,8 @@ trait DivisionAndSquareFunctional[P[_]] extends DivisionAndSquare[P] {
     
     for {
        
-        resDivision <- division(divident,divisor)  
-                
+        resDivision <- division(divident,divisor)                
+        
         resSquare <- square(resDivision)            
      
     } yield resSquare

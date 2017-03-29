@@ -9,7 +9,7 @@ import scala.concurrent.Future
   
 object MonadErrorImpl {
   
-  implicit val EFutureEither : MonadError[FutureEither, Throwable] = new  MonadError[FutureEither, Throwable] {
+  val EFutureEither : MonadError[FutureEither, Throwable] = new  MonadError[FutureEither, Throwable] {
     
     import scala.concurrent.ExecutionContext.Implicits.global
   

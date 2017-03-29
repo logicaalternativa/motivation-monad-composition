@@ -6,8 +6,8 @@ trait DivisionAndSquareFunctional[P[_]] extends DivisionAndSquare[P] {
   import cats.MonadError
     
   import cats.implicits._
-
-  implicit val E : MonadError[P, Throwable]
+  
+  implicit val E : MonadError[P, Throwable]  
   
   def divisionAndSquare( divident : Int, divisor : Int ) : P[Double] = {
     

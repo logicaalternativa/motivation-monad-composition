@@ -1,14 +1,15 @@
 package motivationcompositionmonad
 
 import org.scalatest._
+import impl.DivisionAndSquareJava
 
-class DivisionAndSquareAsJavaSpec extends FunSuite {
+class DivisionAndSquareJavaSpec extends FunSuite {
   
-  import DivisionAndSquareAsJava._
+  val classTest = new DivisionAndSquareJava
   
   test("Test ok") {
     
-    assert( divisionAndSquare( 8, 2 )  === 2 )
+    assert( classTest.divisionAndSquare( 8, 2 )  === 2 )
     
   }
   
@@ -16,7 +17,7 @@ class DivisionAndSquareAsJavaSpec extends FunSuite {
     
      
     val res = intercept[IllegalArgumentException] {
-      divisionAndSquare( 8, 0 )
+       classTest.divisionAndSquare( 8, 0 )
     }
     
     assert ( res.getMessage === "Error divisor equals 0" ) 
@@ -27,7 +28,7 @@ class DivisionAndSquareAsJavaSpec extends FunSuite {
   test("Divisor or dividend is a negative number") {
     
     val res = intercept[IllegalArgumentException] {
-      divisionAndSquare( 8, -2 )
+       classTest.divisionAndSquare( 8, -2 )
     }
     
     assert ( res.getMessage === "Error value minus 0" ) 

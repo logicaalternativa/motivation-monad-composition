@@ -21,7 +21,9 @@ object MonadErrorImpl {
       
       for {
         
-        res <- fa
+        res <- fa.recoverWith {
+                      case e => raiseError( e ) 
+                    }
         
         resError <- res match{
           

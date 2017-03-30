@@ -36,7 +36,7 @@ object DivisionAndSquareFutureEither extends DivisionAndSquare[FutureEither] {
       
     }
     
-    def square( value : Int ) : FutureEither[Double] = {
+    def squareR( value : Int ) : FutureEither[Double] = {
       
       import scala.math.sqrt
       
@@ -59,7 +59,7 @@ object DivisionAndSquareFutureEither extends DivisionAndSquare[FutureEither] {
     }
   
 
-    override def divisionAndSquare( divident : Int, divisor : Int ) : FutureEither[Double] = {
+    override def divisionAndSquareR( divident : Int, divisor : Int ) : FutureEither[Double] = {
 
 
        for {
@@ -67,7 +67,7 @@ object DivisionAndSquareFutureEither extends DivisionAndSquare[FutureEither] {
           resDivision <- division(divident,divisor)  
                   
           resSquare <-  resDivision match {
-                          case Right( value ) => square( value )            
+                          case Right( value ) => squareR( value )            
                           case Left ( error ) => Future( Left( error) )  
                         }
        

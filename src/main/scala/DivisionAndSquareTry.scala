@@ -16,7 +16,7 @@ object DivisionAndSquareTry  extends DivisionAndSquare[Try] {
       
     }
     
-    def square( value : Int ) : Try[Double] = {
+    def squareR( value : Int ) : Try[Double] = {
       
       import scala.math.sqrt
       
@@ -34,13 +34,13 @@ object DivisionAndSquareTry  extends DivisionAndSquare[Try] {
     }
   
 
-    override def divisionAndSquare( divident : Int, divisor : Int ) : Try[Double] = {
+    override def divisionAndSquareR( divident : Int, divisor : Int ) : Try[Double] = {
 
        for {
        
           resDivision <- division(divident,divisor)  
                   
-          resSquare <- square(resDivision)            
+          resSquare <- squareR(resDivision)            
        
        } yield resSquare
                  

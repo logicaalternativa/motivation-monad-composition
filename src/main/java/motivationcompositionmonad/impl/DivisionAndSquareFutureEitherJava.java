@@ -55,7 +55,7 @@ public class DivisionAndSquareFutureEitherJava implements DivisionAndSquareFunct
     
   } 
   
-  public Future<Either<Throwable,Double>> square( int value ) {
+  public Future<Either<Throwable,Double>> squareR( int value ) {
     
     Either<Throwable,Double> res =  ( value < 0  )
                     ? new Left<>( new IllegalArgumentException( "Error value minus 0" ) )

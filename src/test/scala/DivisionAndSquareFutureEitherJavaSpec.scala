@@ -18,7 +18,7 @@ class DivisionAndSquareFutureEitherJavaSpec extends FunSuite with ScalaFutures {
   
   test("Test ok") {
     
-    whenReady( testClass.divisionAndSquare( 8, 2 ), tm ) {
+    whenReady( testClass.divisionAndSquareR( 8, 2 ), tm ) {
       ( res ) => 
         res match {
           case Right(value) => assert( value === 2, "sqr (8 / 2 ) = 2 " )
@@ -30,7 +30,7 @@ class DivisionAndSquareFutureEitherJavaSpec extends FunSuite with ScalaFutures {
   
   test("Test divisor equal Zero") {
 
-    whenReady( testClass.divisionAndSquare( 8, 0 ), tm ) {
+    whenReady( testClass.divisionAndSquareR( 8, 0 ), tm ) {
       ( res : Either[Throwable,Double] ) => 
         res match {
           case Right(value) => fail( s"It's should not be an error : $value" )
@@ -43,7 +43,7 @@ class DivisionAndSquareFutureEitherJavaSpec extends FunSuite with ScalaFutures {
    
   test("Divisor or dividend is a negative number") {
     
-    whenReady( testClass.divisionAndSquare( 8, -2 ), tm ) {
+    whenReady( testClass.divisionAndSquareR( 8, -2 ), tm ) {
       ( res : Either[Throwable,Double] ) => 
         res match {
           case Right(value) => fail( s"It's should not be an error : $value" )

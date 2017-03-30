@@ -13,7 +13,7 @@ object DivisionAndSquareOption extends DivisionAndSquare[Option] {
       
     }
     
-    def square( value : Int ) : Option[Double] = {
+    def squareR( value : Int ) : Option[Double] = {
       
       import scala.math.sqrt
       
@@ -30,13 +30,13 @@ object DivisionAndSquareOption extends DivisionAndSquare[Option] {
     }
   
 
-    override def divisionAndSquare( divident : Int, divisor : Int ) : Option[Double] = {
+    override def divisionAndSquareR( divident : Int, divisor : Int ) : Option[Double] = {
 
        for {
        
           resDivision <- division(divident,divisor)  
                   
-          resSquare <- square(resDivision)            
+          resSquare <- squareR(resDivision)            
        
        } yield resSquare
                  

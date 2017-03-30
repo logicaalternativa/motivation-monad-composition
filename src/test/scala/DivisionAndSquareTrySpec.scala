@@ -9,7 +9,7 @@ class DivisionAndSquareTrySpec extends FunSuite {
   
   test("Test ok") {
     
-    divisionAndSquare( 8, 2 ) match {
+    divisionAndSquareR( 8, 2 ) match {
       case Success( value ) => assert( value === 2, "sqr (8 / 2 ) = 2 " )
       case Failure( e ) => fail( "Error!!!!" )
     } 
@@ -18,7 +18,7 @@ class DivisionAndSquareTrySpec extends FunSuite {
   
   test("Test divisor equal Zero") {
     
-    divisionAndSquare( 8, 0 ) match {
+    divisionAndSquareR( 8, 0 ) match {
     
       case Success( value ) => fail( s"Error. It has value: $value" )
       case Failure(e) => assert( e.getMessage === "Error divisor equals 0" )
@@ -28,7 +28,7 @@ class DivisionAndSquareTrySpec extends FunSuite {
     
   test("Divisor or dividend is a negative number") {
     
-    divisionAndSquare( 8, -2 ) match {
+    divisionAndSquareR( 8, -2 ) match {
     
       case Success ( value ) => fail( s"Error. It has value: $value" )
       case Failure (e) => assert( e.getMessage === "Error value minus 0" )

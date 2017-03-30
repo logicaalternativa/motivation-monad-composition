@@ -9,13 +9,13 @@ trait DivisionAndSquareFunctional[P[_]] extends DivisionAndSquare[P] {
   
   implicit val E : MonadError[P, Throwable]  
   
-  def divisionAndSquare( divident : Int, divisor : Int ) : P[Double] = {
+  def divisionAndSquareR( divident : Int, divisor : Int ) : P[Double] = {
     
     for {
        
         resDivision <- division(divident,divisor)                
         
-        resSquare <- square(resDivision)            
+        resSquare <- squareR(resDivision)            
      
     } yield resSquare
     

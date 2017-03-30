@@ -16,7 +16,7 @@ class DivisionAndSquareFutureEitherSpec extends FunSuite with ScalaFutures {
   test("Test ok") {
     
     
-    whenReady( divisionAndSquare( 8, 2 ), tm ) {
+    whenReady( divisionAndSquareR( 8, 2 ), tm ) {
       ( res : Either[Throwable,Double] ) => 
         res match {
           case Right(value) => assert( value === 2, "sqr (8 / 2 ) = 2 " )
@@ -29,7 +29,7 @@ class DivisionAndSquareFutureEitherSpec extends FunSuite with ScalaFutures {
   
   test("Test divisor equal Zero") {
 
-    whenReady( divisionAndSquare( 8, 0 ), tm ) {
+    whenReady( divisionAndSquareR( 8, 0 ), tm ) {
       ( res : Either[Throwable,Double] ) => 
         res match {
           case Right(value) => fail( s"It's should not be an error : $value" )
@@ -42,7 +42,7 @@ class DivisionAndSquareFutureEitherSpec extends FunSuite with ScalaFutures {
     
   test("Divisor or dividend is a negative number") {
     
-    whenReady( divisionAndSquare( 8, -2 ), tm ) {
+    whenReady( divisionAndSquareR( 8, -2 ), tm ) {
       ( res : Either[Throwable,Double] ) => 
         res match {
           case Right(value) => fail( s"It's should not be an error : $value" )

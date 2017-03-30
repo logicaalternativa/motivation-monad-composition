@@ -13,7 +13,7 @@ object DivisionAndSquareAsJava {
       
     }
     
-    def square( value : Int ) : Double = {
+    def squareR( value : Int ) : Double = {
       
       import scala.math.sqrt
       
@@ -30,11 +30,11 @@ object DivisionAndSquareAsJava {
     }
   
 
-    def divisionAndSquare( divident : Int, divisor : Int ) : Double = {
+    def divisionAndSquareR( divident : Int, divisor : Int ) : Double = {
       
       val resDivision =  division( divident, divisor )
       
-      val resSquare = square( resDivision )
+      val resSquare = squareR( resDivision )
       
       resSquare
       

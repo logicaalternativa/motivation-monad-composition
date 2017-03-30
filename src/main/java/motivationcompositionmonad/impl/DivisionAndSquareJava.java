@@ -21,9 +21,9 @@ public class DivisionAndSquareJava {
       
     }
     
-    public Double square( int value  ) {
+    public Double squareR( int value  ) {
       
-      if( value < 0){
+      if( value < 0 ) {
         
         throw new IllegalArgumentException( "Error value minus 0" );
             
@@ -36,11 +36,11 @@ public class DivisionAndSquareJava {
     }
   
 
-    public Double divisionAndSquare( int divident, int divisor) {
+    public Double divisionAndSquareR( int divident, int divisor) {
       
       int resDivision =  division( divident, divisor);
       
-      Double resSquare = square( resDivision );
+      Double resSquare = squareR( resDivision );
       
       return resSquare;
       

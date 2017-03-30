@@ -17,7 +17,7 @@ class DivisionAndSquareFutureSpec extends FunSuite with ScalaFutures {
   test("Test ok") {
     
     
-    whenReady( divisionAndSquare( 8, 2 ), tm ) {
+    whenReady( divisionAndSquareR( 8, 2 ), tm ) {
       value => assert( value === 2, "sqr (8 / 2 ) = 2 " )
     }
 
@@ -25,7 +25,7 @@ class DivisionAndSquareFutureSpec extends FunSuite with ScalaFutures {
   
   test("Test divisor equal Zero") {
 
-    val f = divisionAndSquare( 8, 0 ) 
+    val f = divisionAndSquareR( 8, 0 ) 
 
     whenReady( f.failed, tm ) {
       e => assert( e.getMessage === "Error divisor equals 0" )
@@ -36,7 +36,7 @@ class DivisionAndSquareFutureSpec extends FunSuite with ScalaFutures {
     
   test("Divisor or dividend is a negative number") {
     
-    val f : Future[Double] = divisionAndSquare( 8, -2 ) 
+    val f : Future[Double] = divisionAndSquareR( 8, -2 ) 
 
     whenReady( f.failed, tm ) {
       e => assert( e.getMessage === "Error value minus 0")

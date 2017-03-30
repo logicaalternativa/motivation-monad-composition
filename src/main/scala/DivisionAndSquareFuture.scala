@@ -28,7 +28,7 @@ object DivisionAndSquareFuture extends DivisionAndSquare[Future] {
       
     }
     
-    def square( value : Int ) : Future[Double] = {
+    def squareR( value : Int ) : Future[Double] = {
       
       import scala.math.sqrt
       
@@ -51,14 +51,14 @@ object DivisionAndSquareFuture extends DivisionAndSquare[Future] {
     }
   
 
-    override def divisionAndSquare( divident : Int, divisor : Int ) : Future[Double] = {
+    override def divisionAndSquareR( divident : Int, divisor : Int ) : Future[Double] = {
 
 
        for {
        
           resDivision <- division(divident,divisor)  
                   
-          resSquare <- square(resDivision)            
+          resSquare <- squareR(resDivision)            
        
        } yield resSquare
        
